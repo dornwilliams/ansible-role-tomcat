@@ -103,22 +103,22 @@
 #    dest: "{{ tomcat_catalina_base }}/bin/catalina.sh"
 #    state: link
 
-#- name: symlink startup script
-#  file:
-#    src: "{{ tomcat_catalina_home }}/bin/startup.sh"
-#    dest: "{{ tomcat_catalina_base }}/bin/startup.sh"
-#    state: link
+- name: symlink startup script
+  file:
+    src: "{{ tomcat_catalina_home }}/bin/startup.sh"
+    dest: "{{ tomcat_catalina_base }}/bin/startup.sh"
+    state: link
 
-#- name: symlink shutdown script
-#  file:
-#    src: "{{ tomcat_catalina_home }}/bin/shutdown.sh"
-#    dest: "{{ tomcat_catalina_base }}/bin/shutdown.sh"
-#    state: link
+- name: symlink shutdown script
+  file:
+    src: "{{ tomcat_catalina_home }}/bin/shutdown.sh"
+    dest: "{{ tomcat_catalina_base }}/bin/shutdown.sh"
+    state: link
 
-#- name: copy "server.xml", using the default recommended settings
-#  copy:
-#    src: server.xml
-#    dest: "{{ tomcat_catalina_base }}/conf/server.xml"
+- name: copy "server.xml", using the default recommended settings
+  copy:
+    src: "{{ tomcat_catalina_home }}/conf/server.xml"
+    dest: "{{ tomcat_catalina_base }}/conf/server.xml"
 
 #- name: copy a "web.xml", using the default recommended settings
 #  copy:
